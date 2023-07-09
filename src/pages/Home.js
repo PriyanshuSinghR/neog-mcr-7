@@ -6,11 +6,12 @@ import { Card } from '../components/Card';
 export const Home = () => {
   return (
     <div>
-      <h2 style={{ color: 'white' }}>Top Continents for your next holiday</h2>
+      <h1 style={{ color: 'white' }}>Welcome to Trip Advisor</h1>
+      <h2 style={{ color: 'purple' }}>Top Continents for your next holiday</h2>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         {data.continents.map((continent) => (
           <div key={continent.id}>
-            <Link to={`/${continent.name}`}>
+            <Link to={`/${continent.id}`}>
               <Card {...continent} />
             </Link>
           </div>

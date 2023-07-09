@@ -14,7 +14,11 @@ export const Card = ({ name, image }) => {
       <img
         src={image}
         alt={name}
-        style={{ width: '100%', height: '100%', borderRadius: '10px' }}
+        style={{
+          width: '100%',
+          height: '100%',
+          borderRadius: '10px',
+        }}
       />
       <p
         style={{
@@ -22,6 +26,7 @@ export const Card = ({ name, image }) => {
           bottom: '15px',
           left: '15px',
           color: 'white',
+          backgroundColor: 'transparent',
         }}
       >
         {name}
