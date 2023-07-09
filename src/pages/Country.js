@@ -4,9 +4,10 @@ import { Link, useParams } from 'react-router-dom';
 import { Card } from '../components/Card';
 
 export const Country = () => {
-  const { countryId } = useParams();
-  const continent = data?.continents?.find((place) => place.id == countryId);
-  console.log(continent);
+  const { continentId } = useParams();
+  const continent = data?.continents?.find(
+    (continent) => continent.id == continentId,
+  );
   return (
     <div>
       <h2 style={{ color: 'white' }}>
@@ -15,7 +16,7 @@ export const Country = () => {
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         {continent?.countries?.map((country) => (
           <div key={country.id}>
-            <Link to={`/${country.id}`}>
+            <Link to={`/${continentId}/${country.id}`}>
               <Card {...country} />
             </Link>
           </div>

@@ -4,10 +4,10 @@ import { Card } from '../components/Card';
 import { data } from '../data';
 
 export const Place = () => {
-  const { countryId, placeId } = useParams();
+  const { continentId, countryId } = useParams();
   const country = data?.continents
-    ?.find((place) => place.id == countryId)
-    .find((place) => place.id == placeId);
+    ?.find((continent) => continent.id == continentId)
+    ?.countries?.find((country) => country.id == countryId);
 
   return (
     <div>
@@ -15,10 +15,10 @@ export const Place = () => {
         Top Countries in {country?.name} for your next holiday
       </h2>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
-        {country?.map((country) => (
-          <div key={country.id}>
-            <Link to={`/${country.id}`}>
-              <Card {...country} />
+        {country?.destinations?.map((place) => (
+          <div key={place.id}>
+            <Link to={`/${continentId}/${countryId}/${place.id}`}>
+              <Card {...place} />
             </Link>
           </div>
         ))}

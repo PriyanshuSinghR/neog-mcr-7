@@ -10,9 +10,9 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/:countryId" element={<Country />} />
-        <Route path="/:placeId" element={<Place />} />
-        <Route path="/detail/:id" element={<Details />} />
+        <Route path="/:continentId" element={<Country />} />
+        <Route path="/:continentId/:countryId" element={<Place />} />
+        <Route path="/:continentId/:countryId/:placeId" element={<Details />} />
       </Routes>
     </div>
   );
